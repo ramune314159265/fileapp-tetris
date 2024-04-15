@@ -1,0 +1,550 @@
+export const run = () => {
+    const font = new FontFace("pixelM", "url(data:application/octet-stream;base64,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)")
+    font.load().then(() => {
+        document.fonts.add(font);
+        const wrapper = document.createElement('div')
+        wrapper.style.background = 'black'
+        wrapper.style.width = '100dvw'
+        wrapper.style.height = '100dvh'
+        wrapper.style.position = 'fixed'
+        wrapper.style.top = 0
+        wrapper.style.left = 0
+        wrapper.style.display = 'flex'
+        wrapper.style.alignItems = 'center'
+        wrapper.style.justifyContent = 'center'
+
+        const close = () => {
+            clearInterval(timer)
+            document.body.removeEventListener('keydown', keyDownHandler)
+            window.removeEventListener('gamepadconnected', gamepadHandler)
+            wrapper.remove()
+        }
+
+        document.body.appendChild(wrapper)
+
+        const mainCanvas = document.createElement('canvas')
+        const ctx = mainCanvas.getContext('2d', { alpha: false })
+
+        const blockSize = 30
+        const blockPerWidth = 10
+        const blockPerHeight = 21
+
+        const width = ((4 + 1 + blockPerWidth + 1 + 4) * blockSize) * devicePixelRatio
+        const height = 630 * devicePixelRatio
+
+        mainCanvas.width = width
+        mainCanvas.height = height
+        const displayWidth = width / devicePixelRatio
+        const displayHeight = height / devicePixelRatio
+        mainCanvas.style.width = String(width / devicePixelRatio) + "px";
+        mainCanvas.style.height = String(height / devicePixelRatio) + "px";
+
+        ctx.scale(devicePixelRatio, devicePixelRatio)
+
+        const minoStartPositionX = 3
+        const minoStartPositionY = -4
+
+        const minoShape = [
+            {
+                //I
+                shapes: [
+                    [
+                        [1, 0], [1, 1], [1, 2], [1, 3]
+                    ], [
+                        [0, 3], [1, 3], [2, 3], [3, 3]
+                    ], [
+                        [1, 0], [1, 1], [1, 2], [1, 3]
+                    ], [
+                        [0, 3], [1, 3], [2, 3], [3, 3]
+                    ]
+                ],
+                color: '#00b0f0',
+            }, {
+                //O
+                shapes: [
+                    [
+                        [1, 2], [2, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 2], [2, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 2], [2, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 2], [2, 2], [1, 3], [2, 3]
+                    ]
+                ],
+                color: '#ffff00'
+            }, {
+                //S
+                shapes: [
+                    [
+                        [2, 2], [3, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 1], [1, 2], [2, 2], [2, 3]
+                    ], [
+                        [2, 2], [3, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 1], [1, 2], [2, 2], [2, 3]
+                    ]
+                ],
+                color: '#92d050'
+            }, {
+                //Z
+                shapes: [
+                    [
+                        [0, 2], [1, 2], [1, 3], [2, 3]
+                    ], [
+                        [2, 1], [1, 2], [2, 2], [1, 3]
+                    ], [
+                        [0, 2], [1, 2], [1, 3], [2, 3]
+                    ], [
+                        [2, 1], [1, 2], [2, 2], [1, 3]
+                    ]
+                ],
+                color: '#ff0000'
+            }, {
+                //J
+                shapes: [
+                    [
+                        [2, 1], [2, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 2], [1, 3], [2, 3], [3, 3]
+                    ], [
+                        [1, 1], [2, 1], [1, 2], [1, 3]
+                    ], [
+                        [1, 2], [2, 2], [3, 2], [3, 3]
+                    ]
+                ],
+                color: '#0070c0'
+            }, {
+                //L
+                shapes: [
+                    [
+                        [1, 1], [1, 2], [1, 3], [2, 3]
+                    ], [
+                        [1, 2], [2, 2], [3, 2], [1, 3]
+                    ], [
+                        [1, 1], [2, 1], [2, 2], [2, 3]
+                    ], [
+                        [3, 2], [1, 3], [2, 3], [3, 3]
+                    ],
+                ],
+                color: '#ffc000'
+            }, {
+                //T
+                shapes: [
+                    [
+                        [2, 2], [1, 3], [2, 3], [3, 3]
+                    ], [
+                        [2, 1], [1, 2], [2, 2], [2, 3]
+                    ], [
+                        [1, 2], [2, 2], [3, 2], [2, 3]
+                    ], [
+                        [2, 2], [2, 1], [3, 2], [2, 3]
+                    ],
+                ],
+                color: '#7030a0'
+            }
+        ]
+
+        class Block {
+            constructor(color) {
+                this.color = color
+            }
+        }
+
+        class Mino {
+            constructor(minoData, x, y, field) {
+                this.minoData = minoData
+                this.rotate = 0
+                this.x = x
+                this.y = y
+                this.field = field
+                this.isOnGrounded = false
+            }
+            draw() {
+                //ミノ落下予測
+                const altitude = blockPerHeight - this.y - Math.max(...this.minoData.shapes[this.rotate].map(i => i[1]))
+                for (let checkingHeight = 0; checkingHeight <= altitude; checkingHeight++) {
+                    if (!(this.isMovable(0, checkingHeight))) {
+                        this.minoData.shapes[this.rotate].forEach(shapeData => {
+                            const coordinateX = this.field.canvasX + blockSize * (this.x + shapeData[0])
+                            const coordinateY = this.field.canvasY + blockSize * (this.y + checkingHeight + shapeData[1] - 1)
+                            ctx.fillStyle = this.minoData.color + '50'
+                            ctx.fillRect(coordinateX, coordinateY, blockSize, blockSize)
+                            ctx.strokeStyle = this.minoData.color + 'ef'
+                            ctx.strokeRect(coordinateX, coordinateY, blockSize, blockSize)
+                        })
+                        break;
+                    }
+                }
+                //ミノ実体
+                this.minoData.shapes[this.rotate].forEach(shapeData => {
+                    const coordinateX = this.field.canvasX + blockSize * (this.x + shapeData[0])
+                    const coordinateY = this.field.canvasY + blockSize * (this.y + shapeData[1])
+                    ctx.fillStyle = this.minoData.color
+                    ctx.fillRect(coordinateX, coordinateY, blockSize, blockSize)
+                    ctx.strokeStyle = 'white'
+                    ctx.strokeRect(coordinateX, coordinateY, blockSize, blockSize)
+                })
+            }
+            fall() {
+                const altitude = blockPerHeight - this.y - Math.max(...this.minoData.shapes[this.rotate].map(i => i[1]))
+                for (let checkingHeight = 0; checkingHeight <= altitude; checkingHeight++) {
+                    if (!(this.isMovable(0, checkingHeight))) {
+                        this.move(0, checkingHeight - 1)
+                        this.copyToField()
+                        this.isOnGrounded = true
+                        break;
+                    }
+                }
+            }
+            isMovable(offsetX, offsetY, rotation = 0) {
+                return this.minoData.shapes[(this.rotate + rotation) % 4].every(shapeData => {
+                    const x = this.x + offsetX + shapeData[0]
+                    const y = this.y + offsetY + shapeData[1]
+                    return !Boolean(this.field.getTile(x, y))
+                })
+            }
+            move(offsetX, offsetY) {
+                if (!(this.isMovable(offsetX, offsetY))) return
+                this.x += offsetX
+                this.y += offsetY
+            }
+            rotation(offsetDegree) {
+                if (this.isMovable(0, 0, offsetDegree)) {
+                    this.rotate = (offsetDegree + this.rotate) % 4
+                }
+            }
+            checkOnGround() {
+                const isOnGrounded = this.minoData.shapes[this.rotate].some(shapeData => {
+                    const x = this.x + shapeData[0]
+                    const y = (this.y + 1) + shapeData[1]
+                    return Boolean(this.field.getTile(x, y))
+                })
+                return isOnGrounded
+            }
+            copyToField() {
+                this.minoData.shapes[this.rotate].forEach(shapeData => {
+                    const x = this.x + shapeData[0]
+                    const y = this.y + shapeData[1]
+                    this.field.setTile(new Block(this.minoData.color), x, y)
+                })
+            }
+        }
+
+        class Field {
+            constructor(canvasX = 0, canvasY = 0) {
+                this.field = [...Array(blockPerHeight)].map(() => Array(blockPerWidth).fill(0));
+                this.canvasX = canvasX
+                this.canvasY = canvasY
+            }
+            getTile(x, y) {
+                if (0 > x || x >= blockPerWidth || y >= blockPerHeight) return 1
+                if (0 > y) return 0
+                return this.field[y][x]
+            }
+            setTile(block, x, y) {
+                if (0 > x || x >= blockPerWidth || 0 > y || y >= blockPerHeight) return
+                this.field[y][x] = block
+            }
+            findFilledLine() {
+                const lines = []
+                this.field.forEach((fieldLine, y) => {
+                    if (fieldLine.every(tile => tile !== 0))
+                        lines.push(y)
+                })
+                return lines
+            }
+            clearLine(y) {
+                this.field.splice(y, 1)
+                this.field.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+            }
+            draw() {
+                this.field.forEach((line, y) => {
+                    line.forEach((tile, x) => {
+                        const coordinateX = this.canvasX + blockSize * x
+                        const coordinateY = this.canvasY + blockSize * y
+                        if (!tile) {
+                            ctx.strokeStyle = '#2f4f4f'
+                            return ctx.strokeRect(coordinateX, coordinateY, blockSize, blockSize)
+                        }
+                        ctx.fillStyle = tile.color
+                        ctx.fillRect(coordinateX, coordinateY, blockSize, blockSize)
+                        ctx.strokeStyle = 'black'
+                        ctx.strokeRect(coordinateX, coordinateY, blockSize, blockSize)
+                    })
+                })
+
+            }
+        }
+
+        class Game {
+            constructor() {
+                this.field = new Field(5 * blockSize)
+                this.arriveMinos = [...new Array(minoShape.length)].map((_, i) => i)
+                this.controllingMino = this.createMino()
+                this.next = [...new Array(6)].map(() => this.createMino())
+                this.lineCleared = 0
+                this.draw()
+            }
+            controls = {
+                left: () => {
+                    this.controllingMino.move(-1, 0)
+                    this.draw()
+                },
+                right: () => {
+                    this.controllingMino.move(1, 0)
+                    this.draw()
+                },
+                down: () => {
+                    this.controllingMino.move(0, 1)
+                    this.draw()
+                    if (this.controllingMino.checkOnGround()) {
+                        this.controllingMino.copyToField()
+                        this.controllingMino = this.popMino()
+                    }
+                },
+                fall: () => {
+                    this.controllingMino.fall()
+                    this.controllingMino = this.popMino()
+                    this.clearLine()
+                    this.draw()
+                },
+                rotationRight: () => {
+                    this.controllingMino.rotation(1)
+                    this.draw()
+                    this.controllingMino.isOnGrounded = false
+                },
+                rotationLeft: () => {
+                    this.controllingMino.rotation(3)
+                    this.draw()
+                    this.controllingMino.isOnGrounded = false
+                },
+                hold: () => {
+                    this.holdExchange()
+                    this.draw()
+                }
+            }
+            createMino() {
+                if (this.arriveMinos.length === 1) {
+                    this.arriveMinos = [...new Array(minoShape.length)].map((_, i) => i)
+                }
+                const index = Math.floor(Math.random() * this.arriveMinos.length)
+                const poppedIndex = this.arriveMinos[index]
+                this.arriveMinos.splice(index, 1)
+                return new Mino(minoShape[poppedIndex], minoStartPositionX, minoStartPositionY, this.field)
+            }
+            popMino() {
+                this.next.push(this.createMino())
+                return this.next.shift()
+            }
+            holdExchange() {
+                const holdingMino = this.holdingMino ?? this.popMino()
+                const controllingMino = this.controllingMino
+                this.controllingMino = holdingMino
+                this.holdingMino = controllingMino
+                this.controllingMino.x = minoStartPositionX
+                this.controllingMino.y = minoStartPositionY
+            }
+            draw() {
+                ctx.clearRect(0, 0, displayWidth, displayHeight)
+                this.field.draw()
+                this.controllingMino.draw()
+                ctx.fillStyle = 'white'
+                ctx.font = `15pt pixelM`;
+                ctx.fillText('Hold', blockSize, 15);
+                if (this.holdingMino) {
+                    this.holdingMino.minoData.shapes[this.holdingMino.rotate].forEach(shapeData => {
+                        const coordinateX = blockSize * shapeData[0]
+                        const coordinateY = blockSize + blockSize * shapeData[1]
+                        ctx.fillStyle = this.holdingMino.minoData.color
+                        ctx.fillRect(coordinateX, coordinateY, blockSize, blockSize)
+                        ctx.strokeStyle = 'white'
+                        ctx.strokeRect(coordinateX, coordinateY, blockSize, blockSize)
+                    })
+                }
+                ctx.fillStyle = 'white'
+                ctx.font = `15pt pixelM`;
+                ctx.fillText('Next', ((6 + blockPerWidth) * blockSize), 15)
+                this.next.forEach((mino, i) => {
+                    const displayBlockSize = blockSize / 2
+                    mino.minoData.shapes[0].forEach(shapeData => {
+                        const coordinateX = ((6 + blockPerWidth) * blockSize) + (shapeData[0] * displayBlockSize)
+                        const coordinateY = blockSize + (i * displayBlockSize) + (i * 4 * displayBlockSize) + (displayBlockSize * shapeData[1])
+                        ctx.fillStyle = mino.minoData.color
+                        ctx.fillRect(coordinateX, coordinateY, displayBlockSize, displayBlockSize)
+                        ctx.strokeStyle = 'black'
+                        ctx.strokeRect(coordinateX, coordinateY, displayBlockSize, displayBlockSize)
+                    })
+                })
+                ctx.fillStyle = 'white'
+                ctx.font = `15pt pixelM`;
+                ctx.fillText(`Line ${this.lineCleared}`, ((6 + blockPerWidth) * blockSize), (this.next.length * 5 * blockSize / 2) + blockSize * 2)
+            }
+            clearLine() {
+                const lines = this.field.findFilledLine()
+                lines.forEach(line => {
+                    this.field.clearLine(line)
+                })
+                this.lineCleared += lines.length
+            }
+            tick() {
+                const isMinoGrounded = this.controllingMino.checkOnGround()
+                if (this.controllingMino.isOnGrounded && isMinoGrounded) {
+                    this.controllingMino.copyToField()
+                    this.controllingMino = this.popMino()
+                }
+                if (isMinoGrounded) {
+                    this.controllingMino.isOnGrounded = true
+                }
+                this.controllingMino.isOnGrounded = true
+                this.controllingMino.move(0, 1)
+                this.draw()
+                this.clearLine()
+            }
+        }
+
+        const gameMain = new Game()
+
+        const drawLoop = () => {
+            gameMain.tick()
+        }
+
+        const timer = setInterval(drawLoop, 650)
+
+        const keyDownHandler = e => {
+            console.log(e.key)
+            switch (true) {
+                case e.key === 'Escape':
+                    close()
+                    break;
+                case e.key === 'ArrowRight' || e.key === 'd':
+                    e.preventDefault()
+                    gameMain.controls.right()
+                    break;
+                case e.key === 'ArrowLeft' || e.key === 'a':
+                    e.preventDefault()
+                    gameMain.controls.left()
+                    break;
+                case e.key === 'ArrowUp' || e.key === 'w' || e.key === 'q':
+                    e.preventDefault()
+                    gameMain.controls.rotationRight()
+                    break;
+                case e.key === 'e':
+                    gameMain.controls.rotationLeft()
+                    break;
+                case e.key === 'x':
+                    gameMain.controls.fall()
+                    break;
+                case e.key === 'r':
+                    gameMain.controls.hold()
+                    break;
+                case e.key === 'ArrowDown' || e.key === 's':
+                    gameMain.controls.down()
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        document.body.addEventListener('keydown', keyDownHandler)
+
+        const gamepadHandler = (e) => {
+            const buttonPressed = {
+                fall: 0,
+                left: 0,
+                right: 0,
+                down: 0,
+                rotateRight: 0,
+                rotateLeft: 0,
+                hold: 0,
+            }
+            const loop = () => {
+                const gamepad = navigator.getGamepads()[0];
+
+                if (gamepad.buttons[0].pressed || gamepad.buttons[1].pressed) {
+                    if (!buttonPressed.fall) {
+                        buttonPressed.fall = performance.now()
+                        gameMain.controls.fall()
+                        gamepad.vibrationActuator?.playEffect?.("dual-rumble", {
+                            startDelay: 0,
+                            duration: 50,
+                            weakMagnitude: 0.4,
+                            strongMagnitude: 0.1,
+                        });
+                    }
+                } else {
+                    buttonPressed.fall = 0
+                }
+
+                if (gamepad.buttons[14].pressed) {
+                    if (performance.now() - buttonPressed.left > 100) {
+                        buttonPressed.left = performance.now()
+                        gameMain.controls.left()
+                    }
+                } else {
+                    buttonPressed.left = 0
+                }
+
+                if (gamepad.buttons[15].pressed) {
+                    if (performance.now() - buttonPressed.right > 100) {
+                        buttonPressed.right = performance.now()
+                        gameMain.controls.right()
+                    }
+                } else {
+                    buttonPressed.right = 0
+                }
+
+                if (gamepad.buttons[12].pressed || gamepad.buttons[7].pressed) {
+                    if (performance.now() - buttonPressed.rotateRight > 200) {
+                        buttonPressed.rotateRight = performance.now()
+                        gameMain.controls.rotationRight()
+                    }
+                } else {
+                    buttonPressed.rotateRight = 0
+                }
+
+                if (gamepad.buttons[6].pressed) {
+                    if (performance.now() - buttonPressed.rotateLeft > 200) {
+                        buttonPressed.rotateLeft = performance.now()
+                        gameMain.controls.rotationLeft()
+                    }
+                } else {
+                    buttonPressed.rotateLeft = 0
+                }
+
+                if (gamepad.buttons[13].pressed) {
+                    if (performance.now() - buttonPressed.down > 50) {
+                        buttonPressed.down = performance.now()
+                        gameMain.controls.down()
+                    }
+                } else {
+                    buttonPressed.down = 0
+                }
+
+                if (gamepad.buttons[3].pressed || gamepad.buttons[2].pressed) {
+                    if (performance.now() - buttonPressed.hold > 500) {
+                        buttonPressed.hold = performance.now()
+                        gameMain.controls.hold()
+                    }
+                } else {
+                    buttonPressed.hold = 0
+                }
+
+                if (gamepad.buttons[8].pressed) {
+                    close()
+                }
+                requestAnimationFrame(loop)
+            }
+            requestAnimationFrame(loop)
+        }
+
+        window.addEventListener("gamepadconnected", gamepadHandler);
+
+        if (navigator.getGamepads()[0]) {
+            gamepadHandler()
+        }
+
+        wrapper.appendChild(mainCanvas)
+    })
+}
